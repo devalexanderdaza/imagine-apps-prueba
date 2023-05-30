@@ -17,7 +17,8 @@
 	"private": true,
 	"license": "ISC",
 	"scripts": {
-		"dev": "turbo run dev"
+		"dev": "turbo run dev",
+		"build": "turbo run build"
 	},
 	"devDependencies": {
 		"turbo": "1.10.0"

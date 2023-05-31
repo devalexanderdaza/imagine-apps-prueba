@@ -5,7 +5,7 @@ import { AuthComponent } from './layouts/auth/auth.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'auth',
     component: AuthComponent,
     loadChildren: () =>
       import('./pages/auth/auth.module').then((m) => m.AuthModule),

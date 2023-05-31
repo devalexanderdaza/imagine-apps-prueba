@@ -45,10 +45,7 @@ export class PostController {
 
   @Get('date/:date')
   async getPostByDate(@Param('date') date: string) {
-    // Convert date (DD-MM-YYYY) to (YYYY-MM-DD) and date mongo format
     date = date.split('-').reverse().join('-');
-
-    console.log(date);
 
     const posts = await this.postService.findByDate(date);
     return posts;

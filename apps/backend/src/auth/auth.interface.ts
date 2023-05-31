@@ -10,3 +10,7 @@ export interface ILoginResponse {
   user: IUser;
   access_token: string;
 }
+
+export interface IBlacklistedToken {
+  token: string;
+}

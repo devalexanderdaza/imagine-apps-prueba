@@ -6,6 +6,8 @@ import { UsersModule } from 'src/users/users.module';
 import { jwtConstants } from './auth.constants';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
+import { MongooseModule } from '@nestjs/mongoose';
+import { BlacklistedToken, BlacklistedTokenSchema } from './auth.schema';
 
 @Module({
   imports: [
@@ -15,6 +17,12 @@ import { AuthService } from './auth.service';
       secret: jwtConstants.secret,
       signOptions: { expiresIn: '6h' },
     }),
+    MongooseModule.forFeature([
+      {
+        name: BlacklistedToken.name,
+        schema: BlacklistedTokenSchema,
+      },
+    ]),
   ],
   controllers: [AuthController],
   providers: [AuthService],

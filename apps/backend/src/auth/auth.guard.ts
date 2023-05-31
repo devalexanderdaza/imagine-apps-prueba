@@ -10,10 +10,15 @@ import { Reflector } from '@nestjs/core';
 import { IS_PUBLIC_KEY } from 'src/decorators/isPublic.decorator';
 
 import { jwtConstants } from './auth.constants';
+import { AuthService } from './auth.service';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-  constructor(private jwtService: JwtService, private reflector: Reflector) {}
+  constructor(
+    private authService: AuthService,
+    private jwtService: JwtService,
+    private reflector: Reflector,
+  ) {}
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
     // Validate if the route is public or not
@@ -48,6 +53,14 @@ export class AuthGuard implements CanActivate {
     if (!request.headers['authorization']) {
       return undefined;
     }
+    // TODO: Uncomment this when logout is implemented
+    // if (
+    //   this.authService.validateBlacklistedToken(
+    //     request.headers['authorization'],
+    //   )
+    // ) {
+    //   return undefined;
+    // }
     const token = request.headers['authorization'].split(' ');
     if (token.length !== 2 && token[0] !== 'Bearer') {
       return undefined;

@@ -44,6 +44,13 @@ export class AuthController {
     });
   }
 
+  @IsPublic()
+  @Get('logout')
+  async logout(@Request() req) {
+    console.log(req.headers['authorization']);
+    return await this.authService.logout(req.headers['authorization']);
+  }
+
   @Get('profile')
   getProfile(@Request() req) {
     return req.user;

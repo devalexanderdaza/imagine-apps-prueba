@@ -1,16 +1,8 @@
-import {
-  Body,
-  Controller,
-  Get,
-  HttpCode,
-  HttpStatus,
-  Post,
-  Request,
-  UseGuards,
-} from '@nestjs/common';
+import { Body, Controller, Get, Post, Request } from '@nestjs/common';
+
+import { IsPublic } from 'src/decorators/isPublic.decorator';
 
 import { LoginCredentialsDto } from './auth.dto';
-import { AuthGuard } from './auth.guard';
 import { ILoginResponse } from './auth.interface';
 import { AuthService } from './auth.service';
 
@@ -18,13 +10,12 @@ import { AuthService } from './auth.service';
 export class AuthController {
   constructor(private authService: AuthService) {}
 
-  @HttpCode(HttpStatus.OK)
+  @IsPublic()
   @Post('login')
   async login(@Body() data: LoginCredentialsDto): Promise<ILoginResponse> {
     return await this.authService.signIn(data);
   }
 
-  @UseGuards(AuthGuard)
   @Get('profile')
   getProfile(@Request() req) {
     return req.user;

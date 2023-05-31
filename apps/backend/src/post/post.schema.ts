@@ -25,6 +25,18 @@ export class Post implements IPost {
     ref: 'User',
   })
   user: User;
+
+  @Prop({
+    type: Date,
+    default: Date.now,
+  })
+  createdAt?: Date;
+
+  @Prop({
+    type: Date,
+    default: Date.now,
+  })
+  updatedAt?: Date;
 }
 
 export const PostSchema = SchemaFactory.createForClass(Post);

@@ -19,6 +19,7 @@ import { PostModule } from './post/post.module';
   imports: [
     ConfigModule.forRoot({
       isGlobal: true, // make env variables global
+      expandVariables: true, // expand variables
       envFilePath: join(__dirname, '..', '..', '..', '.env'), // path to .env file
       validationSchema: Joi.object({
         // Application

@@ -8,6 +8,8 @@ export type PostDocument = HydratedDocument<Post>;
 
 @Schema()
 export class Post implements IPost {
+  _id?: string;
+
   @Prop({
     required: true,
     maxlength: 120,

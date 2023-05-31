@@ -14,24 +14,18 @@ export class PostService {
   ) {}
 
   /**
-   * Find a post by character on the content
+   * Find posts by character on the title or content
    * @param character | string
    * @returns Promise<Post[]>
    */
-  async findPostsByCharacterOnTheContent(character: string): Promise<Post[]> {
+  async findPostsByCharacter(character: string): Promise<Post[]> {
     return this.postModel
-      .find({ content: { $regex: character, $options: 'i' } })
-      .exec();
-  }
-
-  /**
-   * Find posts by character on the title
-   * @param character | string
-   * @returns Promise<Post[]>
-   */
-  async findPostsByCharacterOnTheTitle(character: string): Promise<Post[]> {
-    return this.postModel
-      .find({ title: { $regex: character, $options: 'i' } })
+      .find({
+        $or: [
+          { title: { $regex: character, $options: 'i' } },
+          { content: { $regex: character, $options: 'i' } },
+        ],
+      })
       .exec();
   }
 
@@ -42,6 +36,16 @@ export class PostService {
    */
   async findByUser(userId: string): Promise<Post[]> {
     return this.postModel.find({ user: userId }).exec();
+  }
+
+  /**
+   * Find a post by user email
+   * @param email | string
+   * @returns Promise<Post[]>
+   */
+  async findByUserEmail(email: string): Promise<Post[]> {
+    const user: User = await this.userService.findOne(email);
+    return this.postModel.find({ user: user._id }).exec();
   }
 
   /**

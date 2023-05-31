@@ -1,7 +1,8 @@
-import { Body, Controller, Request, Post } from '@nestjs/common';
+import { Body, Controller, Request, Post, Get, Param } from '@nestjs/common';
 import { PostService } from './post.service';
 import { UsersService } from 'src/users/users.service';
 import { CreatePostDto } from './post.dto';
+import { User } from 'src/users/users.schema';
 
 @Controller('post')
 export class PostController {
@@ -15,5 +16,24 @@ export class PostController {
     const user = await this.userService.findOne(req.user.email);
     const newPost = await this.postService.create(post, user.email);
     return newPost;
+  }
+
+  @Get('get')
+  async getPostByUser(@Request() req) {
+    const user: User = await this.userService.findOne(req.user.email);
+    const posts = await this.postService.findByUser(user._id);
+    return posts;
+  }
+
+  @Get('all')
+  async getAllPosts() {
+    const posts = await this.postService.findAll();
+    return posts;
+  }
+
+  @Get('search/:q')
+  async searchPost(@Param('q') searchCharacter: string) {
+    const posts = await this.postService.findPostsByCharacter(searchCharacter);
+    return posts;
   }
 }

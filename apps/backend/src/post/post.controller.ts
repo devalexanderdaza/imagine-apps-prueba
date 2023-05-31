@@ -36,4 +36,21 @@ export class PostController {
     const posts = await this.postService.findPostsByCharacter(searchCharacter);
     return posts;
   }
+
+  @Get('user/:email')
+  async getPostByUserEmail(@Param('email') email: string) {
+    const posts = await this.postService.findByUserEmail(email);
+    return posts;
+  }
+
+  @Get('date/:date')
+  async getPostByDate(@Param('date') date: string) {
+    // Convert date (DD-MM-YYYY) to (YYYY-MM-DD) and date mongo format
+    date = date.split('-').reverse().join('-');
+
+    console.log(date);
+
+    const posts = await this.postService.findByDate(date);
+    return posts;
+  }
 }

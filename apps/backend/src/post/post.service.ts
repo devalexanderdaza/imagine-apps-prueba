@@ -69,4 +69,18 @@ export class PostService {
     });
     return newPost.save();
   }
+
+  /**
+   * Find a post by createdAt date
+   * @param date | string
+   * @returns Promise<Post>
+   */
+  async findByDate(date: string): Promise<Post[]> {
+    // Get all posts and filter by date
+    const posts = await this.postModel.find().exec();
+    const post = posts.filter((post) => {
+      return post.createdAt.toISOString().split('T')[0] === date;
+    });
+    return post;
+  }
 }

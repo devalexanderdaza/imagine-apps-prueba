@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { AuthComponent } from './layouts/auth/auth.component';
 import { InternalComponent } from './layouts/internal/internal.component';
 import { AuthMainIdentityComponent } from './layouts/components/auth-main-identity/auth-main-identity.component';
+import { AuthMainFooterComponent } from './layouts/components/auth-main-footer/auth-main-footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
     InternalComponent,
-    AuthMainIdentityComponent
+    AuthMainIdentityComponent,
+    AuthMainFooterComponent
   ],
   imports: [
     BrowserModule,

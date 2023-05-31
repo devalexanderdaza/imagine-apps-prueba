@@ -24,7 +24,7 @@ export class AuthService {
       throw new UnauthorizedException();
     }
     delete user.password;
-    const payload = { sub: user._id, email: user.email };
+    const payload = { sub: user.fullName, email: user.email };
     const access_token = this.jwtService.sign(payload);
     return { user, access_token };
   }

@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './auth-main-identity.component.html',
   styleUrls: ['./auth-main-identity.component.css'],
 })
-export class AuthMainIdentityComponent {}
+export class AuthMainIdentityComponent {
+  title: string = 'Sign In';
+}

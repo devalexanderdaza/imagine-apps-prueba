@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Post } from 'src/app/interfaces/post.interface';
 import { ApiService } from 'src/app/services/api.service';
 
-interface Post {
-  title: string;
-  content: string;
-  createdAt: string;
-}
+
 
 @Component({
   selector: 'app-my-post',

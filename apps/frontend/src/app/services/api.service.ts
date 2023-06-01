@@ -22,10 +22,22 @@ export class ApiService {
   }
 
   public getMyPosts(): Observable<any> {
-    const token = localStorage.getItem('token')!;
-    const headers = { Authorization: `${token}` };
+    const headers = this.getHeaders();
     return this.httpClient.get<any>(`${this.API_URL}/post/get`, {
       headers,
     });
+  }
+
+  public getAllPosts(): Observable<any> {
+    const headers = this.getHeaders();
+    return this.httpClient.get<any>(`${this.API_URL}/post/all`, {
+      headers,
+    });
+  }
+
+  private getHeaders() {
+    const token = localStorage.getItem('token')!;
+    const headers = { Authorization: `${token}` };
+    return headers;
   }
 }

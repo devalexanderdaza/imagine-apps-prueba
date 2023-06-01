@@ -33,7 +33,6 @@ export class AuthController {
   @Post('register')
   async register(@Body() data: CreateUserDto): Promise<ILoginResponse> {
     const userExists: User = await this.userService.findOne(data.email);
-    console.log(userExists);
     if (userExists) {
       throw new UnprocessableEntityException('User already exists');
     }

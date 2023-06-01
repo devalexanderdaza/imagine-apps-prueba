@@ -23,7 +23,6 @@ export class MyPostComponent implements OnInit {
     this.apiService.getMyPosts().subscribe(
       (response) => {
         this.posts = response;
-        console.log(this.posts);
       },
       (error) => {
         console.log(error);

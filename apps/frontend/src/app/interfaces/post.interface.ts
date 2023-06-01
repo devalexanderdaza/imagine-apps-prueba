@@ -3,3 +3,8 @@ export interface Post {
   content: string;
   createdAt: string;
 }
+
+export interface PostCreate {
+  title: string;
+  content: string;
+}

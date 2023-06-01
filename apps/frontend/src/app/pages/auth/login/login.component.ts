@@ -64,7 +64,6 @@ export class LoginComponent implements OnInit {
     console.log(this.loginForm.value);
     this.apiService.login(this.loginForm.value).subscribe(
       (response) => {
-        console.log(response);
         localStorage.setItem('userId', response.user._id);
         localStorage.setItem('email', response.user.email);
         localStorage.setItem('fullName', response.user.fullName);

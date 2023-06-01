@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { AuthLogin } from '../interfaces/auth.interface';
+import { PostCreate } from '../interfaces/post.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -31,6 +32,13 @@ export class ApiService {
   public getAllPosts(): Observable<any> {
     const headers = this.getHeaders();
     return this.httpClient.get<any>(`${this.API_URL}/post/all`, {
+      headers,
+    });
+  }
+
+  public createPost(data: PostCreate): Observable<any> {
+    const headers = this.getHeaders();
+    return this.httpClient.post<any>(`${this.API_URL}/post/create`, data, {
       headers,
     });
   }

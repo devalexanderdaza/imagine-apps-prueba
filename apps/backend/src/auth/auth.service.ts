@@ -1,13 +1,14 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
+import { InjectModel } from '@nestjs/mongoose';
 
 import { UsersService } from 'src/users/users.service';
 import { IUser } from 'src/users/users.interface';
 
+import { Model } from 'mongoose';
+
 import { LoginCredentialsDto } from './auth.dto';
 import { ILoginResponse } from './auth.interface';
-import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
 import { BlacklistedToken } from './auth.schema';
 
 @Injectable()
@@ -28,7 +29,7 @@ export class AuthService {
     if (user?.password !== data.password) {
       throw new UnauthorizedException();
     }
-    delete user.password;
+    user.password = null;
     const payload = { sub: user.fullName, email: user.email };
     const access_token = this.jwtService.sign(payload);
     return { user, access_token };

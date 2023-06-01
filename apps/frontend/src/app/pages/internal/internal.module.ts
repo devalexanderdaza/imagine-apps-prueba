@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { IntPostComponent } from '../components/int-post/int-post.component';
 
@@ -9,7 +10,6 @@ import { MyPostComponent } from './my-post/my-post.component';
 import { NewPostComponent } from './new-post/new-post.component';
 import { PostsComponent } from './posts/posts.component';
 
-
 @NgModule({
   declarations: [
     PostsComponent,
@@ -17,6 +17,6 @@ import { PostsComponent } from './posts/posts.component';
     MyPostComponent,
     IntPostComponent,
   ],
-  imports: [CommonModule, InternalRoutingModule],
+  imports: [CommonModule, InternalRoutingModule, ReactiveFormsModule],
 })
 export class InternalModule {}

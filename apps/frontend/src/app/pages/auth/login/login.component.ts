@@ -5,8 +5,10 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { AuthLogin } from 'src/app/interfaces/auth.interface';
+import { ApiService } from 'src/app/services/api.service';
 
 const loginData: AuthLogin = {
   email: 'dev.alexander.daza@gmail.com',
@@ -27,7 +29,11 @@ export class LoginComponent implements OnInit {
     ],
   });
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private apiService: ApiService
+  ) {}
 
   ngOnInit(): void {
     this.loginForm.reset(loginData);
@@ -56,6 +62,19 @@ export class LoginComponent implements OnInit {
   onLogin(): void {
     if (this.loginForm.invalid) return;
     console.log(this.loginForm.value);
-    this.loginForm.reset();
+    this.apiService.login(this.loginForm.value).subscribe(
+      (response) => {
+        console.log(response);
+        localStorage.setItem('userId', response.user._id);
+        localStorage.setItem('email', response.user.email);
+        localStorage.setItem('fullName', response.user.fullName);
+        localStorage.setItem('token', `Bearer ${response.access_token}`);
+        this.loginForm.reset();
+        this.router.navigate(['/internal/posts']);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

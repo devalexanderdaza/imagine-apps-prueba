@@ -8,6 +8,9 @@ async function bootstrap() {
   // Set up the Nest application
   const app: INestApplication = await NestFactory.create(AppModule);
 
+  // Enable CORS
+  app.enableCors();
+
   // Get config service
   const configService: ConfigService = app.get(ConfigService);
 

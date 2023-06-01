@@ -20,4 +20,12 @@ export class ApiService {
   public register(data: any): Observable<any> {
     return this.httpClient.post<any>(`${this.API_URL}/auth/register`, data);
   }
+
+  public getMyPosts(): Observable<any> {
+    const token = localStorage.getItem('token')!;
+    const headers = { Authorization: `${token}` };
+    return this.httpClient.get<any>(`${this.API_URL}/post/get`, {
+      headers,
+    });
+  }
 }

@@ -1,4 +1,10 @@
-import { Component, Renderer2, ViewChild, ElementRef } from '@angular/core';
+import {
+  Component,
+  Renderer2,
+  ViewChild,
+  ElementRef,
+  OnInit,
+} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,11 +12,17 @@ import { Router } from '@angular/router';
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.css'],
 })
-export class TopBarComponent {
+export class TopBarComponent implements OnInit {
   @ViewChild('navbarToggler')
   navbarToggler!: ElementRef;
 
+  fullName: string = '';
+
   constructor(private renderer: Renderer2, private router: Router) {}
+
+  ngOnInit(): void {
+    this.fullName = localStorage.getItem('fullName')!;
+  }
 
   toggleMenu() {
     const navbarTogglerElement = this.navbarToggler.nativeElement;

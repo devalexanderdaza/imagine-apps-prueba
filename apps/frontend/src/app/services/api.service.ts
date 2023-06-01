@@ -16,4 +16,8 @@ export class ApiService {
   public login(data: AuthLogin): Observable<any> {
     return this.httpClient.post<any>(`${this.API_URL}/auth/login`, data);
   }
+
+  public register(data: any): Observable<any> {
+    return this.httpClient.post<any>(`${this.API_URL}/auth/register`, data);
+  }
 }

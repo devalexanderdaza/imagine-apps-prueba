@@ -1,0 +1,37 @@
+h1 {
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 36px;
+  color: #FFFFFF;
+}
+
+label {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  color: #0E2248;
+}
+
+input {
+  background: #EBEBEB;
+  border: 1px solid #5F5E5E;
+  border-radius: 16px;
+}
+
+textarea {
+  background: #EBEBEB;
+  border: 1px solid #5F5E5E;
+  border-radius: 16px;
+  box-sizing: border-box;
+  height: 91px;
+}
+
+button {
+  position: absolute;
+  width: 90px;
+  left: 209px;
+  top: 328px;
+  border: none;
+  background: linear-gradient(270deg, #C645A9 17.66%, #58BBDB 89.57%);
+  border-radius: 20px;
+}

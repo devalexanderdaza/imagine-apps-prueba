@@ -19,7 +19,9 @@
       </div>
     </div>
     <div *ngIf="posts.length > 0">
-      <app-int-post *ngFor="let item of posts"></app-int-post>
+      <div *ngFor="let item of posts">
+        <app-int-post [title]="item.title" [content]="item.content" [createdAt]="item.createdAt"></app-int-post>
+      </div>
     </div>
   </div>
 </div>

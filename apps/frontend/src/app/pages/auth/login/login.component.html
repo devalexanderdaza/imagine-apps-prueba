@@ -1,0 +1,20 @@
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()" autocomplete="off">
+  <div class="form-group">
+    <label for="username">Email</label>
+    <input type="email" class="form-control" id="email" placeholder="example@email.com" formControlName="email">
+    <div *ngIf="isValidField('email')" class="error-message">{{ getFieldsError('email') }}</div>
+  </div>
+  <div class="form-group mt-2">
+    <label for="password">Password</label>
+    <div class="input-group">
+      <input type="password" class="form-control" placeholder="********" formControlName="password">
+      <div class="input-group-append">
+        <span class="input-group-text" id="eye">
+          <i class="fas fa-eye"></i>
+        </span>
+      </div>
+    </div>
+    <div *ngIf="isValidField('password')" class="error-message">{{ getFieldsError('password') }}</div>
+  </div>
+  <button type="submit" class="btn btn-primary">SIGN IN</button>
+</form>

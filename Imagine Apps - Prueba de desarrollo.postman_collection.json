@@ -1,0 +1,500 @@
+{
+	"info": {
+		"_postman_id": "86009d14-d3fd-410a-9fd4-23b9303ede93",
+		"name": "Imagine Apps - Prueba de desarrollo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3987067"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"dev.alexander.daza@gmail.com\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:5000/auth/login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"john@doe.com\",\n    \"password\": \"password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "337"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"151-Pi4pe4Ay4U8PqcjxERio4oqI4w4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 May 2023 14:35:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"_id\": \"4eedd099-4e6a-45d3-b4b5-493fe5767e1b\",\n        \"fullName\": \"John Doe\",\n        \"email\": \"john@doe.com\"\n    },\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0ZWVkZDA5OS00ZTZhLTQ1ZDMtYjRiNS00OTNmZTU3NjdlMWIiLCJlbWFpbCI6ImpvaG5AZG9lLmNvbSIsImlhdCI6MTY4NTU0MzczNywiZXhwIjoxNjg1NTQzNzk3fQ.NIxznU3fAB70QIivySlb7Ww96wt4_vzvdcUDqiRxh2Q\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKb2huIERvZSIsImVtYWlsIjoiam9obkBkb2UuY29tIiwiaWF0IjoxNjg1NTQ2MDU2LCJleHAiOjE2ODU1Njc2NTZ9.pMNjYhIAhzg6bo_w6-A-C4f3Hh1UCLgYXon6iKr4NZc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/auth/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get profile",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKb2huIERvZSIsImVtYWlsIjoiam9obkBkb2UuY29tIiwiaWF0IjoxNjg1NTQ0ODI1LCJleHAiOjE2ODU1NDQ4ODV9.wci2_XgIhPnmMLYhGYk_MSQ60jZF8C92AOVuVAtuDko",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5000/api/auth/profile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"auth",
+										"profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4b-lDYvQ2LnRKP8/bWYCZ6PkqAnBRM\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 May 2023 14:53:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"sub\": \"John Doe\",\n    \"email\": \"john@doe.com\",\n    \"iat\": 1685544825,\n    \"exp\": 1685544885\n}"
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\": \"David Imagine\",\n    \"email\": \"david.lancheros@imagineapps.co\",\n    \"password\": \"imagineapps\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"fullName\": \"NEYIB ALEXANDER DAZA GUERRERO\",\n    \"email\": \"dev.alexander.daza@gmail.com\",\n    \"password\": \"password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "404"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"194-b6gsn7/n9Z61louvoChs+2uB2JM\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 31 May 2023 17:06:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"_id\": \"64777e7d4067212f7d32f51c\",\n        \"fullName\": \"NEYIB ALEXANDER DAZA GUERRERO\",\n        \"email\": \"dev.alexander.daza@gmail.com\",\n        \"password\": \"password\",\n        \"__v\": 0\n    },\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJORVlJQiBBTEVYQU5ERVIgREFaQSBHVUVSUkVSTyIsImVtYWlsIjoiZGV2LmFsZXhhbmRlci5kYXphQGdtYWlsLmNvbSIsImlhdCI6MTY4NTU1Mjc2NSwiZXhwIjoxNjg1NTc0MzY1fQ.Z59-7GDg6-C25j9TBonCDSOELtPSYOOKSO_WJ4IcUjQ\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBbGV4YW5kZXIgRGF6YSIsImVtYWlsIjoiZGV2LmFsZXhhbmRlci5kYXphQGdtYWlsLmNvbSIsImlhdCI6MTY4NTU1Nzk5NCwiZXhwIjoxNjg1NTc5NTk0fQ.TDTpQhQBKK8p1U1RED82hXyNTYpuEpCfh4oxPvFS8hw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Create POST",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJORVlJQiBBTEVYQU5ERVIgREFaQSBHVUVSUkVSTyIsImVtYWlsIjoiZGV2LmFsZXhhbmRlci5kYXphQGdtYWlsLmNvbSIsImlhdCI6MTY4NTU1MjkwOSwiZXhwIjoxNjg1NTc0NTA5fQ.iE0S48ZSsfmrcc9y0hH3j_jYsVTYnl8tiaISTv0cNxk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"La Importancia de las Pruebas: La Puerta de Entrada al Éxito en el Desarrollo\",\n    \"content\": \"Las pruebas son un elemento crucial en el mundo del desarrollo de software. Antes de ingresar a una compañía, someterse a pruebas es fundamental para demostrar habilidades y conocimientos. ¿Por qué son tan importantes? En primer lugar, las pruebas permiten evaluar la capacidad del desarrollador para identificar y solucionar problemas. Estas pruebas ponen a prueba la habilidad de pensar de manera lógica y analítica, así como la capacidad de encontrar soluciones eficientes y efectivas. Además, las pruebas ayudan a garantizar la calidad del trabajo del desarrollador. Permiten detectar errores y anomalías antes de que lleguen a los usuarios finales, evitando problemas costosos y reputacionales para la empresa. Esto demuestra que el candidato es capaz de crear un código sólido y confiable. Otro aspecto importante es que las pruebas fomentan la colaboración y la comunicación dentro del equipo. Al realizar pruebas, los desarrolladores interactúan con otros miembros del equipo, discuten soluciones y comparten conocimientos. Esto no solo permite evaluar las habilidades técnicas, sino también las habilidades de trabajo en equipo y la capacidad de adaptarse a diferentes situaciones. Además, las pruebas brindan una oportunidad para demostrar la capacidad de aprender y adaptarse rápidamente. El mundo del desarrollo de software está en constante evolución, y los desarrolladores deben estar dispuestos a aprender nuevas tecnologías y enfoques. Al enfrentarse a pruebas, los candidatos pueden demostrar su disposición para mantenerse actualizados y aprender de manera continua. En resumen, las pruebas son la puerta de entrada al éxito en el desarrollo de software. No solo permiten evaluar habilidades técnicas, sino también demostrar capacidad de resolución de problemas, calidad del trabajo, habilidades de trabajo en equipo y capacidad de aprendizaje. Por tanto, es fundamental que los desarrolladores se preparen y se sometan a pruebas antes de ingresar a una compañía. Es el primer paso para construir una carrera sólida y exitosa en el mundo del desarrollo.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/post/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"post",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get post created by user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEYXZpZCBJbWFnaW5lIiwiZW1haWwiOiJkYXZpZC5sYW5jaGVyb3NAaW1hZ2luZWFwcHMuY28iLCJpYXQiOjE2ODU1NTM4MzIsImV4cCI6MTY4NTU3NTQzMn0.yP4w_MgC3wJHixi1LELG1HFmGGIcIOjDJSQsGnmOBdY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/post/get",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"post",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search post by character on title and content",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJORVlJQiBBTEVYQU5ERVIgREFaQSBHVUVSUkVSTyIsImVtYWlsIjoiZGV2LmFsZXhhbmRlci5kYXphQGdtYWlsLmNvbSIsImlhdCI6MTY4NTU1Mjc2NSwiZXhwIjoxNjg1NTc0MzY1fQ.Z59-7GDg6-C25j9TBonCDSOELtPSYOOKSO_WJ4IcUjQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/post/search/de",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"post",
+								"search",
+								"de"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all post by user using email",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJORVlJQiBBTEVYQU5ERVIgREFaQSBHVUVSUkVSTyIsImVtYWlsIjoiZGV2LmFsZXhhbmRlci5kYXphQGdtYWlsLmNvbSIsImlhdCI6MTY4NTU1Mjc2NSwiZXhwIjoxNjg1NTc0MzY1fQ.Z59-7GDg6-C25j9TBonCDSOELtPSYOOKSO_WJ4IcUjQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/post/user/david.lancheros@imagineapps.co",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"post",
+								"user",
+								"david.lancheros@imagineapps.co"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get post by date (DD-MM-YYYY)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBbGV4YW5kZXIgRGF6YSIsImVtYWlsIjoiZGV2LmFsZXhhbmRlci5kYXphQGdtYWlsLmNvbSIsImlhdCI6MTY4NTU1ODEwMSwiZXhwIjoxNjg1NTc5NzAxfQ.3gikE1SNXBsD0aMPB4IzWrZjHSwx2mBz7b-_OEWj3gg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/post/date/31-05-2023",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"post",
+								"date",
+								"31-05-2023"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all post",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN_HERE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/post/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"post",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

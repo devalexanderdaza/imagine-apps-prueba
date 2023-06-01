@@ -1,0 +1,47 @@
+label {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  color: #0E2248;
+}
+
+input {
+  border: none;
+  border-radius: 0%;
+  border-bottom: 1px solid #ccc;
+  background-color: transparent;
+  color: #000;
+  padding-left: 0;
+}
+
+input::placeholder {
+  color: #B7B7B7;
+}
+
+input:focus {
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+}
+.error-message {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  color: #FE4B4B;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#eye {
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+}
+
+button {
+  background: linear-gradient(270deg, #C645A9 17.66%, #58BBDB 89.57%);
+  border-radius: 20px;
+  width: 100%;
+  border: none;
+  margin-top: 5px;
+}

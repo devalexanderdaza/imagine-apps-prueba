@@ -1,0 +1,25 @@
+.navbar {
+  padding: 10px 0;
+}
+
+.navbar-brand img {
+  height: 40px;
+}
+
+.navbar-nav .nav-link {
+  padding: 10px;
+}
+
+#logoText {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  color: #0E2248;
+}
+
+.burger-button,
+.burger-button:focus,
+.burger-button:active,
+.burger-button:hover {
+  border: none !important;
+}

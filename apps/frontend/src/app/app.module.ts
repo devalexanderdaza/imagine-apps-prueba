@@ -7,6 +7,7 @@ import { AuthComponent } from './layouts/auth/auth.component';
 import { InternalComponent } from './layouts/internal/internal.component';
 import { AuthMainIdentityComponent } from './layouts/components/auth-main-identity/auth-main-identity.component';
 import { AuthMainFooterComponent } from './layouts/components/auth-main-footer/auth-main-footer.component';
+import { TopBarComponent } from './layouts/components/top-bar/top-bar.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AuthMainFooterComponent } from './layouts/components/auth-main-footer/a
     AuthComponent,
     InternalComponent,
     AuthMainIdentityComponent,
-    AuthMainFooterComponent
+    AuthMainFooterComponent,
+    TopBarComponent
   ],
   imports: [
     BrowserModule,

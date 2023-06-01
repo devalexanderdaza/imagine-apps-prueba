@@ -1,0 +1,38 @@
+.publication {
+  border-radius: 16px;
+  border: 1px solid #5F5E5E;
+}
+
+.card-header {
+  background: #58BCDB;
+  border-radius: 16px 16px 0px 0px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #EBEBEB;
+}
+
+.card-body {
+  background: #666666;
+}
+
+.card-text {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: #EBEBEB;
+  border-radius: 0px 0px 15px 15px;
+}
+
+.card-footer {
+  background: #666666;
+  border-radius: 0px 0px 15px 15px;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  color: #EBEBEB;
+}
+
+.custom-align-right {
+  text-align: right;
+}

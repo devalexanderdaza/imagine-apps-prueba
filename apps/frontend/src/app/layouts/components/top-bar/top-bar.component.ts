@@ -1,4 +1,5 @@
 import { Component, Renderer2, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-bar',
@@ -9,7 +10,7 @@ export class TopBarComponent {
   @ViewChild('navbarToggler')
   navbarToggler!: ElementRef;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, private router: Router) {}
 
   toggleMenu() {
     const navbarTogglerElement = this.navbarToggler.nativeElement;
@@ -29,5 +30,21 @@ export class TopBarComponent {
         }
       }
     }
+  }
+
+  goToCreatePost() {
+    this.router.navigate(['/internal/new']);
+  }
+
+  goToMyPosts() {
+    this.router.navigate(['/internal/my']);
+  }
+
+  goToPosts() {
+    this.router.navigate(['/internal/posts']);
+  }
+
+  logout() {
+    this.router.navigate(['/auth/login']);
   }
 }
